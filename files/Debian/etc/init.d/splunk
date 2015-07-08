@@ -23,17 +23,17 @@ splunk_start() {
 }
 splunk_stop() {
   echo Stopping Splunk...
-  "/opt/splunk/bin/splunk" stop 
+  "/opt/splunk/bin/splunk" stop --accept-license --no-prompt --answer-yes
   RETVAL=$?
 }
 splunk_restart() {
   echo Restarting Splunk...
-  "/opt/splunk/bin/splunk" restart 
+  "/opt/splunk/bin/splunk" restart --accept-license --no-prompt --answer-yes
   RETVAL=$?
 }
 splunk_status() {
   echo Splunk status:
-  "/opt/splunk/bin/splunk" status 
+  "/opt/splunk/bin/splunk" status --accept-license --no-prompt --answer-yes
   RETVAL=$?
 }
 case "$1" in
